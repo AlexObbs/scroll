@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Testimonials</title>
+    <style>
+        .testimonial-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-row {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            will-change: transform;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        #row2 {
+            animation-direction: reverse;
+        }
+
+        .testimonial-item {
+            display: inline-block;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .testimonial-item img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="testimonial-container">
+        <div class="testimonial-row" id="row1">
+            <!-- Add testimonial items for row 1 -->
+            <div class="testimonial-item">
+                <img src="https://cdn.textstudio.com/output/sample/normal/0/0/0/1/alex-logo-275-10.png"
+                    alt="Testimonial 1">
+                <p>Testimonial text 1</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://cdn.textstudio.com/output/sample/normal/0/0/0/1/alex-logo-275-10.png"
+                    alt="Testimonial 1">
+                <p>Testimonial text 1</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://cdn.textstudio.com/output/sample/normal/0/0/0/1/alex-logo-275-10.png"
+                    alt="Testimonial 1">
+                <p>Testimonial text 1</p>
+            </div>
+
+            <!-- Add more items as needed -->
+        </div>
+        <div class="testimonial-row" id="row2">
+            <!-- Add testimonial items for row 2 -->
+            <div class="testimonial-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnLAsQ1pMWj02d4sKwuBV7QzxSAKbZZmN-A&s"
+                    alt="Testimonial 3">
+                <p>Testimonial text 3</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Alex_%28Zug%29_Logo.svg/1280px-Alex_%28Zug%29_Logo.svg.png"
+                    alt="Testimonial 4">
+                <p>Testimonial text 4</p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://cdn.textstudio.com/output/sample/normal/0/0/0/1/alex-logo-275-10.png"
+                    alt="Testimonial 1">
+                <p>Testimonial text 1</p>
+            </div>
+
+            <!-- Add more items as needed -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function duplicateContent(element) {
+                const clone = element.innerHTML;
+                element.innerHTML += clone;
+            }
+
+            const row1 = document.getElementById('row1');
+            const row2 = document.getElementById('row2');
+
+            duplicateContent(row1);
+            duplicateContent(row2);
+        });
+    </script>
+
+</body>
+
+</html>
